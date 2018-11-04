@@ -13,7 +13,8 @@
 - 本项目Swagger接口文档：http://xpay.exrick.cn/swagger-ui.html
 - 实际综合应用商城项目：http://xmall.exrick.cn/
 
-### v1.2版本已发布！实现移动端支付方案 [立即获取源码和文档](http://xpay.exrick.cn/pay)
+### v1.3版本已发布！实现移动端支付方案 [立即获取源码和文档](http://xpay.exrick.cn/pay)
+- 增加轮询回调
 - 实现订单支付标识 解决无法识别支付人问题
 - 实现一键打开支付宝APP支付(支持安卓浏览器、IOS应用，不支持微信中打开)
 - 实现移动端支付方案 支持H5、APP、小程序
@@ -21,11 +22,11 @@
 
     ![](http://p77xsahe9.bkt.clouddn.com/18-7-21/16350122.jpg)
 
-#### 注：v1.2源码（含原理文档）获取方式 
+#### 注：v1.3源码（含原理文档）获取方式 
 - 进入 [XPay官网](http://xpay.exrick.cn/pay) 成功支付测试后 将自动发至你所填写的邮箱中
 
 ### 声明
-> 此系统只针对个人开发收款支付，实际可应用到实现~~自动维护捐赠表等业务，无法商用~~！v1.2版本可已实现充值、发卡、自动发货等业务，可勉强商用！当然你还可将此项目当作入门级的SpringBoot练习项目
+> 此系统只针对个人开发收款支付，实际可应用到实现~~自动维护捐赠表等业务，无法商用~~！v1.3版本可已实现充值、发卡、自动发货等业务，可勉强商用！当然你还可将此项目当作入门级的SpringBoot练习项目
 
 ### 个人申请支付接口现状
 - 原生网银支付
@@ -93,7 +94,7 @@
 - 如何确定收款来自哪笔交易订单？
     - ~~实际业务中审核邮件会包含用户、订单号、支付金额等信息，请根据这些信息进行核对~~
     - ~~如果短时间内收款过多仍无法判断，em？你做的什么交易收款能这么多？这只是针对个人的OK？请去申请支付接口！~~
-    - v1.2版本已解决该问问题 [点我获取v1.2版本源码](http://xpay.exrick.cn/pay)
+    - v1.2版本已解决该问问题 [点我获取v1.3版本源码](http://xpay.exrick.cn/pay)
 - 为什么不做自动监听？
     - 迟早被封的为什么要做？...XPay主要面向个人如学生群体，也目前成本最低最稳定的方案，免费！
     - 作者了解到目前市面上最黑科技的也就是 [Payjs](https://payjs.cn/) 了，只支持微信支付，正规业务推荐用它，非正规？请看它[官方说明](https://help.payjs.cn/chang-jian-wen-ti/jin-zhi-jie-ru-lie-biao.html)，不想受限制不想用APP监听还想免费？请用我这套，哈哈![QQ截图20180721215515.png](https://i.loli.net/2018/07/21/5b533b90bd23b.png)
@@ -133,12 +134,14 @@
 ### 文件说明
 - 数据库文件：xpay.sql(仅一张表)
 ### 本地开发运行部署
+- Maven导入依赖 `mvn install`
 - 依赖：[Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)(启动项目非必须，但影响功能)
 - 新建数据库，见xpay.sql文件
 - 在 `application.properties` 中修改你的配置，例如端口、数据库、Redis、邮箱配置等，其中有详细注释
 - 运行 `XpayApplication.java`
 - 访问默认端口8888：http://localhost:8888
 ### Linux后台运行示例
+- `mvn package` 打包
 `nohup java -jar xpay-1.0-SNAPSHOT.jar -Xmx128m &`
 ### 作者其他项目推荐
 - [XMall：基于SOA架构的分布式电商购物商城](https://github.com/Exrick/xmall)
@@ -160,8 +163,5 @@
 - 免费交流群 `562962309` [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=52f6003e230b26addeed0ba6cf343fcf3ba5d97829d17f5b8fa5b151dba7e842)
 
 - 作者博客：[http://blog.exrick.cn](http://blog.exrick.cn)
-### 捐赠
-![](http://p77xsahe9.bkt.clouddn.com/18-7-20/54731550.jpg)
-
-![](http://p77xsahe9.bkt.clouddn.com/18-6-28/32845239.jpg)
+### [捐赠](http://xpay.exrick.cn/pay)
 
